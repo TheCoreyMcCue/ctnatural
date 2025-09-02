@@ -21,8 +21,9 @@ import {
   Stethoscope,
 } from "lucide-react";
 
-import logo from "../public/logo.png";
 import Image from "next/image";
+import Link from "next/link";
+import logo from "../public/logo.png";
 
 // Optional: shadcn/ui components. If you don't use shadcn, replace Button/Card with <button>/<div> styled via Tailwind.
 const Button: React.FC<
@@ -42,6 +43,7 @@ const Button: React.FC<
     {children}
   </button>
 );
+
 // Simple Card fallback if shadcn/ui is not installed
 const Card: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
@@ -52,6 +54,7 @@ const Card: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
     {children}
   </div>
 );
+
 const CardContent: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
   className = "",
@@ -66,7 +69,7 @@ const CardContent: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
  * CT Natural — Landing Page (Next.js + TypeScript)
  *
  * Usage:
- * 1) Save as app/page.tsx (App Router) or pages/index.tsx (Pages Router).
+ * 1) Save as app/page.tsx (App Router).
  * 2) Ensure Tailwind CSS is set up.
  * 3) If not using shadcn/ui, swap the Button/Card imports above with plain elements.
  */
@@ -108,18 +111,18 @@ const features: Array<{ icon: React.ReactNode; title: string; desc: string }> =
   [
     {
       icon: <ShieldCheck className="w-5 h-5" />,
-      title: "Equipment‑Safe",
-      desc: "Non‑abrasive and materials‑conscious for housings, tables, and accessories common to MRI/CT.",
+      title: "Equipment-Safe",
+      desc: "Non-abrasive and materials-conscious for housings, tables, and accessories common to MRI/CT.",
     },
     {
       icon: <Droplets className="w-5 h-5" />,
       title: "Contrast Cleanup, Simplified",
-      desc: "Cuts through iodinated and gadolinium spill residue with a quick spray‑and‑wipe routine.",
+      desc: "Cuts through iodinated and gadolinium spill residue with a quick spray-and-wipe routine.",
     },
     {
       icon: <Sparkles className="w-5 h-5" />,
-      title: "Residue‑Free Finish",
-      desc: "Leaves surfaces clean without sticky films—great for patient‑contact areas.",
+      title: "Residue-Free Finish",
+      desc: "Leaves surfaces clean without sticky films—great for patient-contact areas.",
     },
     {
       icon: <Clock className="w-5 h-5" />,
@@ -129,12 +132,12 @@ const features: Array<{ icon: React.ReactNode; title: string; desc: string }> =
     {
       icon: <Leaf className="w-5 h-5" />,
       title: "Naturally Derived",
-      desc: "Plant‑forward formulation, low odor, and friendly daily handling characteristics.",
+      desc: "Plant-forward formulation, low odor, and friendly daily handling characteristics.",
     },
     {
       icon: <Factory className="w-5 h-5" />,
       title: "Reliable Supply",
-      desc: "From solo clinics to multi‑site networks—predictable lead times and volume options.",
+      desc: "From solo clinics to multi-site networks—predictable lead times and volume options.",
     },
   ];
 
@@ -143,7 +146,7 @@ const testimonials = [
     name: "Dr. Elena Park",
     role: "Lead Radiographer",
     quote:
-      "Room turnover is smoother and the low‑odor profile is a win for patients.",
+      "Room turnover is smoother and the low-odor profile is a win for patients.",
   },
   {
     name: "Samir Patel",
@@ -191,20 +194,20 @@ ${form.message}`
       {/* Header */}
       <header className="sticky top-0 z-40 border-b border-emerald-200/60 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
-          <a href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src={logo}
               alt="CT Natural logo"
-              className="h-20 w-auto md:h-22" // increased from h-9
+              className="h-20 w-auto md:h-24"
               priority
             />
             <div>
-              {/* <p className="text-base font-semibold leading-tight">
-                {CONFIG.companyName}
-              </p> */}
+              {/* Company name is optional next to the logo */}
+              {/* <p className="text-base font-semibold leading-tight">{CONFIG.companyName}</p> */}
               <p className="text-sm text-slate-500">{CONFIG.tagline}</p>
             </div>
-          </a>
+          </Link>
+
           <nav className="hidden items-center gap-6 md:flex">
             <a
               href="#features"
@@ -248,7 +251,7 @@ ${form.message}`
           >
             <h1 className="text-3xl font-semibold leading-tight md:text-5xl">
               Natural{" "}
-              <span className="text-[var(--brand)]">spray‑on cleaner</span> for
+              <span className="text-[var(--brand)]">spray-on cleaner</span> for
               imaging care
             </h1>
             <p className="text-slate-600 md:text-lg">
@@ -268,10 +271,10 @@ ${form.message}`
             </div>
             <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-slate-600">
               <div className="flex items-center gap-1">
-                <ShieldCheck className="h-4 w-4" /> Equipment‑safe
+                <ShieldCheck className="h-4 w-4" /> Equipment-safe
               </div>
               <div className="flex items-center gap-1">
-                <Microscope className="h-4 w-4" /> Lab‑tested
+                <Microscope className="h-4 w-4" /> Lab-tested
               </div>
               <div className="flex items-center gap-1">
                 <Leaf className="h-4 w-4" /> Low odor
@@ -309,14 +312,14 @@ ${form.message}`
       </section>
 
       {/* Features */}
-      <section id="features" className="mx-auto max-w-7xl px-4 py-30 md:px-6">
+      <section id="features" className="mx-auto max-w-7xl px-4 py-16 md:px-6">
         <div className="mb-10 text-center">
           <h2 className="text-2xl font-semibold md:text-4xl">
             Why imaging teams choose {CONFIG.companyName}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-slate-600">
-            Built for day‑to‑day workflows—clean quickly, protect equipment, and
-            keep rooms patient‑ready.
+            Built for day-to-day workflows—clean quickly, protect equipment, and
+            keep rooms patient-ready.
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -345,10 +348,10 @@ ${form.message}`
             </h3>
             <ul className="mt-6 space-y-3 text-slate-700">
               {[
-                "Quick spray‑and‑wipe routine for contrast spill cleanup",
-                "Residue‑free on tables, coils, pads, and housings",
-                "Low‑odor handling that supports patient comfort",
-                "Ready‑to‑use bottles; bulk refills available",
+                "Quick spray-and-wipe routine for contrast spill cleanup",
+                "Residue-free on tables, coils, pads, and housings",
+                "Low-odor handling that supports patient comfort",
+                "Ready-to-use bottles; bulk refills available",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <CheckCircle2 className="mt-1 h-5 w-5 text-[var(--brand)]" />
@@ -427,15 +430,14 @@ ${form.message}`
               <div className="flex flex-wrap gap-3 md:justify-end">
                 <Button
                   size="lg"
-                  className="bg-grey-300 text-slate-900 hover:bg-white/90"
+                  className="bg-gray-300 text-slate-900 hover:bg-white/90"
                 >
                   Download SDS
                 </Button>
-
                 <Button
                   size="lg"
                   variant="outline"
-                  className="bg-grey-300 text-slate-900 hover:bg-white/90"
+                  className="bg-gray-300 text-slate-900 hover:bg-white/90"
                 >
                   Spec Sheet
                 </Button>
@@ -453,8 +455,8 @@ ${form.message}`
               Talk to our team
             </h3>
             <p className="mt-3 max-w-prose text-slate-600">
-              Tell us about your imaging suite and needs. We'll follow up with
-              product details and next steps.
+              Tell us about your imaging suite and needs. We&apos;ll follow up
+              with product details and next steps.
             </p>
 
             <div className="mt-6 space-y-3 text-sm text-slate-700">
