@@ -256,9 +256,11 @@ ${form.message}`
               support patient comfort, and protect sensitive equipment.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button className="bg-[var(--brand)] hover:bg-[var(--brand)]/90">
-                Talk to Sales
-              </Button>
+              <Link href="#contact">
+                <Button className="bg-[var(--brand)] hover:bg-[var(--brand)]/90">
+                  Talk to Sales
+                </Button>
+              </Link>
               <Button variant="outline" className="border-emerald-300">
                 Download SDS
               </Button>
