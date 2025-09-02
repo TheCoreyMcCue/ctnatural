@@ -14,11 +14,8 @@ import {
   Droplets,
   Clock,
   Leaf,
-  ArrowRight,
   Star,
-  Recycle,
   Microscope,
-  Stethoscope,
 } from "lucide-react";
 
 import Image from "next/image";
@@ -361,7 +358,7 @@ ${form.message}`
             </ul>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button className="bg-[var(--brand)] hover:bg-[var(--brand)]/90">
-                Request Pricing <ArrowRight className="ml-2 h-4 w-4" />
+                Request Pricing
               </Button>
               <Button variant="outline" className="border-emerald-300">
                 Book a Demo
