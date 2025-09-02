@@ -540,7 +540,7 @@ ${form.message}`
       {/* Footer */}
       <footer className="border-t border-emerald-200/60 bg-white/70">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="grid grid-cols-1 items-center gap-6 py-1 md:grid-cols-3">
+          <div className="grid grid-cols-1 items-center gap-6 pb-5 md:grid-cols-3">
             {/* Left: Logo */}
             <div className="flex items-center justify-center md:justify-start">
               <Image
