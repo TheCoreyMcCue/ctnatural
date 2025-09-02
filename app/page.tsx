@@ -539,34 +539,47 @@ ${form.message}`
 
       {/* Footer */}
       <footer className="border-t border-emerald-200/60 bg-white/70">
-        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 md:grid-cols-3 md:px-6">
-          <div className="flex items-center gap-3">
-            <div className="grid h-9 w-9 place-items-center rounded-xl bg-[var(--brand)] text-white font-bold tracking-tight">
-              {CONFIG.logoText}
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="grid grid-cols-1 items-center gap-6 py-1 md:grid-cols-3">
+            {/* Left: Logo */}
+            <div className="flex items-center justify-center md:justify-start">
+              <Image
+                src={logo}
+                alt="CT Natural logo"
+                className="h-20 w-auto md:h-25"
+                priority
+              />
             </div>
-            <div>
-              <p className="text-sm font-semibold leading-tight">
-                {CONFIG.companyName}
+
+            {/* Middle: Copyright */}
+            <div className="text-center text-sm text-slate-600">
+              <p>
+                © {new Date().getFullYear()} {CONFIG.companyName}. All rights
+                reserved.
               </p>
-              <p className="text-xs text-slate-500">{CONFIG.tagline}</p>
             </div>
-          </div>
-          <div className="text-sm text-slate-600">
-            <p>
-              © {new Date().getFullYear()} {CONFIG.companyName}. All rights
-              reserved.
-            </p>
-          </div>
-          <div className="flex items-center justify-start gap-4 md:justify-end">
-            <a href="#" className="text-sm text-slate-600 hover:text-slate-900">
-              Privacy
-            </a>
-            <a href="#" className="text-sm text-slate-600 hover:text-slate-900">
-              SDS
-            </a>
-            <a href="#" className="text-sm text-slate-600 hover:text-slate-900">
-              Contact
-            </a>
+
+            {/* Right: Links */}
+            <div className="flex items-center justify-center gap-4 md:justify-end">
+              <a
+                href="#"
+                className="text-sm text-slate-600 hover:text-slate-900"
+              >
+                Privacy
+              </a>
+              <a
+                href="#"
+                className="text-sm text-slate-600 hover:text-slate-900"
+              >
+                SDS
+              </a>
+              <a
+                href="#contact"
+                className="text-sm text-slate-600 hover:text-slate-900"
+              >
+                Contact
+              </a>
+            </div>
           </div>
         </div>
       </footer>
